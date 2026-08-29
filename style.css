@@ -1,0 +1,457 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #09001a, #1b0035, #09001a);
+    color: white;
+    overflow: hidden;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.mission-card {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    padding: 50px 35px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 50px rgba(170, 0, 255, 0.2);
+    animation: appear 1.2s ease;
+}
+
+.lock {
+    font-size: 55px;
+    margin-bottom: 15px;
+    animation: float 2s infinite ease-in-out;
+}
+
+.small-text {
+    letter-spacing: 5px;
+    font-size: 12px;
+    color: #c58cff;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.description {
+    color: #d8cde5;
+    line-height: 1.7;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+button {
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    background: linear-gradient(90deg, #9d00ff, #ff3cac);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px rgba(255, 60, 172, 0.5);
+}
+
+.warning {
+    margin-top: 25px;
+    font-size: 12px;
+    color: #9f91aa;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .mission-card {
+        padding: 40px 22px;
+    }
+}
+
+/* =========================
+   LEVEL SYSTEM
+========================= */
+
+.level-badge {
+    display: inline-block;
+    padding: 7px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    color: #d6a5ff;
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.game-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.question-number {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #a98abd;
+    margin-bottom: 15px;
+}
+
+.question-box {
+    margin-top: 25px;
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.question-box h2 {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.options button {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 13px 18px;
+    border-radius: 14px;
+    color: white;
+    font-size: 14px;
+}
+
+.options button:hover {
+    background: rgba(255, 60, 172, 0.2);
+    transform: translateY(-2px);
+}
+
+.hint {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #8f819b;
+}
+
+
+/* =========================
+   PAGE TRANSITIONS
+========================= */
+
+.fade-out {
+    opacity: 0;
+    transform: scale(0.96);
+    transition: 0.5s ease;
+}
+
+.fade-in {
+    animation: fadeIn 0.7s ease;
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: scale(0.96) translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+
+}
+
+/* =========================
+   PROGRESS BAR
+========================= */
+
+.progress-container {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    margin: 15px 0 25px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #9d00ff, #ff3cac);
+    border-radius: 20px;
+    transition: width 0.5s ease;
+}
+
+/* =========================
+   MYSTERY CASE
+========================= */
+
+.case-file {
+    animation: caseAppear 0.8s ease;
+}
+
+.case-icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.classified {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #c58cff;
+    margin-bottom: 15px;
+}
+
+.case-file h1 {
+    letter-spacing: 2px;
+}
+
+.case-line {
+    width: 80px;
+    height: 2px;
+    margin: 20px auto;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #c58cff,
+        transparent
+    );
+}
+
+.mystery-text {
+    font-size: 22px;
+    margin: 10px 0 30px;
+}
+
+.clue-number {
+    display: inline-block;
+    padding: 7px 14px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: #c58cff;
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.clue-card {
+    animation: caseAppear 0.7s ease;
+}
+
+@keyframes caseAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+/* ================================
+   ROMANTIC BACKGROUND
+================================ */
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255, 100, 180, 0.25), transparent 30%),
+        radial-gradient(circle at 80% 30%, rgba(150, 80, 255, 0.25), transparent 30%),
+        linear-gradient(135deg, #12001f, #250044, #4b075f, #170021);
+
+    background-size: 200% 200%;
+    animation: romanticBackground 12s ease infinite;
+
+    overflow-x: hidden;
+    position: relative;
+}
+
+@keyframes romanticBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ================================
+   FLOATING HEARTS
+================================ */
+
+.floating-hearts {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.floating-heart {
+    position: absolute;
+    bottom: -50px;
+
+    color: #ff6b9d;
+    font-size: 22px;
+
+    opacity: 0;
+
+    animation: floatHeart linear forwards;
+
+    filter:
+        drop-shadow(0 0 6px rgba(255, 80, 150, 0.8));
+}
+
+@keyframes floatHeart {
+
+    0% {
+        transform: translateY(0) scale(0.7) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: translateY(-50vh) scale(1) rotate(10deg);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translateY(-115vh) scale(1.3) rotate(-15deg);
+        opacity: 0;
+    }
+}
+
+.margin-card{
+    position:relative;
+    z-index:10;
+}
+
+button{
+    position:relative;
+    z-index:20;
+}
+
+.final-love {
+    text-align: center;
+    padding: 30px;
+    animation: finalAppear 1.5s ease;
+}
+
+.big-heart {
+    font-size: 75px;
+    animation: heartBeat 1.3s infinite;
+    margin-bottom: 15px;
+}
+
+.final-love h1 {
+    font-size: 42px;
+    margin: 20px 0;
+}
+
+.typewriter {
+    max-width: 600px;
+    margin: 25px auto;
+    min-height: 80px;
+}
+
+.typewriter p {
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+.final-small {
+    font-size: 18px;
+    margin-top: 25px;
+}
+
+.heart-pulse {
+    font-size: 45px;
+    margin-top: 30px;
+    animation: heartBeat 1.2s infinite;
+}
+
+@keyframes finalAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes heartBeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.25);
+    }
+}
