@@ -517,3 +517,17 @@ button{
     }
 
 }
+
+.final-slide {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.final-slide h1 {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.final-slide h2 {
+    font-size: 36px;
+}

@@ -59,6 +59,10 @@ const questions = [
 ];
 
 
+/* =========================
+   LEVEL 01
+========================= */
+
 function startMission() {
 
     const card = document.querySelector(".mission-card");
@@ -66,6 +70,9 @@ function startMission() {
     card.classList.add("fade-out");
 
     setTimeout(() => {
+
+        currentQuestion = 1;
+        score = 0;
 
         showQuestion(1);
 
@@ -98,9 +105,11 @@ function showQuestion(questionNumber) {
         </p>
 
         <div class="progress-container">
+
             <div class="progress-bar"
                  style="width: ${progress}%">
             </div>
+
         </div>
 
         <div class="question-box">
@@ -112,7 +121,7 @@ function showQuestion(questionNumber) {
             <div class="options">
 
                 ${question.options.map((option, index) => `
-                    
+
                     <button onclick="selectAnswer(${index})">
                         ${option}
                     </button>
@@ -212,6 +221,10 @@ function levelComplete() {
 }
 
 
+/* =========================
+   LEVEL 02
+========================= */
+
 function startLevelTwo() {
 
     const card = document.querySelector(".mission-card");
@@ -254,6 +267,7 @@ function startLevelTwo() {
             <button onclick="startMystery()">
                 I'M READY →
             </button>
+
         `;
 
         card.classList.remove("fade-out");
@@ -290,6 +304,7 @@ function startMystery() {
                 <div class="case-line"></div>
 
                 <p class="description">
+
                     Two people.
                     <br>
                     One first message.
@@ -298,6 +313,7 @@ function startMystery() {
                     <br><br>
 
                     And somehow...
+
                 </p>
 
                 <h2 class="mystery-text">
@@ -318,6 +334,11 @@ function startMystery() {
     }, 500);
 }
 
+
+/* =========================
+   CLUES
+========================= */
+
 function openClue(clueNumber) {
 
     const card = document.querySelector(".mission-card");
@@ -326,9 +347,7 @@ function openClue(clueNumber) {
 
     setTimeout(() => {
 
-        // =========================
-        // CLUE 01
-        // =========================
+        /* CLUE 01 */
 
         if (clueNumber === 1) {
 
@@ -349,11 +368,17 @@ function openClue(clueNumber) {
                     </h1>
 
                     <p class="description">
+
                         Every story has a beginning.
+
                         <br><br>
+
                         And in this one...
+
                         <br>
+
                         someone had to make the first move. 👀
+
                     </p>
 
                     <div class="question-box">
@@ -364,15 +389,15 @@ function openClue(clueNumber) {
 
                         <div class="options">
 
-                            <button onclick="solveClue(1)">
-                                Our first conversation  
+                            <button onclick="checkClueAnswer(this, 1, 0)">
+                                Our first conversation
                             </button>
 
-                            <button onclick="solveClue(1)">
+                            <button onclick="checkClueAnswer(this, 1, 1)">
                                 The moment you first smiled at me
                             </button>
 
-                            <button onclick="solveClue(1)">
+                            <button onclick="checkClueAnswer(this, 1, 2)">
                                 A random day we spent together
                             </button>
 
@@ -387,13 +412,10 @@ function openClue(clueNumber) {
                 </div>
 
             `;
-
         }
 
 
-        // =========================
-        // CLUE 02
-        // =========================
+        /* CLUE 02 */
 
         else if (clueNumber === 2) {
 
@@ -424,6 +446,7 @@ function openClue(clueNumber) {
                         <br><br>
 
                         Just two people...
+
                         <br>
                         talking about something completely normal.
 
@@ -432,20 +455,20 @@ function openClue(clueNumber) {
                     <div class="question-box">
 
                         <h2>
-                            What would you choose if you had to describe what i mean to you ?
+                            What would you choose if you had to describe what I mean to you?
                         </h2>
 
                         <div class="options">
 
-                            <button onclick="solveClue(2)">
+                            <button onclick="checkClueAnswer(this, 2, 0)">
                                 A beautiful coincidence
                             </button>
 
-                            <button onclick="solveClue(2)">
+                            <button onclick="checkClueAnswer(this, 2, 1)">
                                 I never want to lose you
                             </button>
 
-                            <button onclick="solveClue(2)">
+                            <button onclick="checkClueAnswer(this, 2, 2)">
                                 Just a sweet memory
                             </button>
 
@@ -460,82 +483,84 @@ function openClue(clueNumber) {
                 </div>
 
             `;
-
         }
+
+
+        /* CLUE 03 */
 
         else if (clueNumber === 3) {
 
-        card.innerHTML = `
+            card.innerHTML = `
 
-        <div class="clue-card">
+                <div class="clue-card">
 
-            <div class="clue-number">
-                CLUE 03
-            </div>
+                    <div class="clue-number">
+                        CLUE 03
+                    </div>
 
-            <div class="game-icon">
-                🫶
-            </div>
+                    <div class="game-icon">
+                        🫶
+                    </div>
 
-            <h1>
-                The Little Things
-            </h1>
+                    <h1>
+                        The Little Things
+                    </h1>
 
-            <p class="description">
+                    <p class="description">
 
-                Maybe it's not about one big moment.
+                        Maybe it's not about one big moment.
 
-                <br><br>
+                        <br><br>
 
-                Maybe it's about the little things...
+                        Maybe it's about the little things...
 
-                <br><br>
+                        <br><br>
 
-                The random conversations.
-                <br>
-                The stupid jokes.
-                <br>
-                The moments when we actually listen to each other.
+                        The random conversations.
+                        <br>
+                        The stupid jokes.
+                        <br>
+                        The moments when we actually listen to each other.
 
-                <br><br>
+                        <br><br>
 
-                So here's the final question...
+                        So here's the final question...
 
-            </p>
+                    </p>
 
-            <div class="question-box">
+                    <div class="question-box">
 
-                <h2>
-                    If life gave us a second chance to write our own little love story, what would you choose?
-                </h2>
+                        <h2>
+                            If life gave us a second chance to write our own little love story, what would you choose?
+                        </h2>
 
-                <div class="options">
+                        <div class="options">
 
-                    <button onclick="solveClue(3)">
-                        Let it remain a beautiful dream
-                    </button>
+                            <button onclick="checkClueAnswer(this, 3, 0)">
+                                Let it remain a beautiful dream
+                            </button>
 
-                    <button onclick="solveClue(3)">
-                        Start the story and see where it takes us
-                    </button>
+                            <button onclick="checkClueAnswer(this, 3, 1)">
+                                Start the story and see where it takes us
+                            </button>
 
-                    <button onclick="solveClue(3)">
-                        Forget everything & move on
-                    </button>
+                            <button onclick="checkClueAnswer(this, 3, 2)">
+                                Forget everything & move on
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <p class="hint">
+                        There might be more to this than you think... 👀
+                    </p>
 
                 </div>
 
-            </div>
+            `;
 
-            <p class="hint">
-                There might be more to this than you think... 👀
-            </p>
-
-        </div>
-
-    `;
-
-}
+        }
 
     }, 450);
 
@@ -545,8 +570,56 @@ function openClue(clueNumber) {
         card.classList.add("fade-in");
 
     }, 500);
-
 }
+
+
+/* =========================
+   CLUE ANSWER SYSTEM
+========================= */
+
+function checkClueAnswer(button, clueNumber, selectedOption) {
+
+    /*
+       Correct answers:
+       Clue 01 -> Option 1
+       Clue 02 -> Option 2
+       Clue 03 -> Option 2
+    */
+
+    const correctAnswers = {
+        1: 0,
+        2: 1,
+        3: 1
+    };
+
+    const correctAnswer = correctAnswers[clueNumber];
+
+    if (selectedOption === correctAnswer) {
+
+        button.classList.add("correct");
+
+        setTimeout(() => {
+
+            solveClue(clueNumber);
+
+        }, 800);
+
+    } else {
+
+        button.classList.add("wrong");
+
+        setTimeout(() => {
+
+            button.classList.remove("wrong");
+
+        }, 700);
+    }
+}
+
+
+/* =========================
+   SOLVE CLUE
+========================= */
 
 function solveClue(clueNumber) {
 
@@ -555,6 +628,8 @@ function solveClue(clueNumber) {
     card.classList.add("fade-out");
 
     setTimeout(() => {
+
+        /* CLUE 01 SOLVED */
 
         if (clueNumber === 1) {
 
@@ -573,7 +648,9 @@ function solveClue(clueNumber) {
                 </h1>
 
                 <p class="description">
+
                     You remembered it.
+
                     <br><br>
 
                     <strong>
@@ -583,10 +660,12 @@ function solveClue(clueNumber) {
                     <br><br>
 
                     And the funny thing is...
+
                     <br>
 
                     I had no idea where that first message
                     would eventually lead. ❤️
+
                 </p>
 
                 <button onclick="openClue(2)">
@@ -597,120 +676,114 @@ function solveClue(clueNumber) {
 
         }
 
+
+        /* CLUE 02 SOLVED */
+
         else if (clueNumber === 2) {
 
-    card.innerHTML = `
+            card.innerHTML = `
 
-        <div class="game-icon">
-            ❤️
-        </div>
+                <div class="game-icon">
+                    ❤️
+                </div>
 
-        <div class="clue-number">
-            CLUE SOLVED
-        </div>
+                <div class="clue-number">
+                    CLUE SOLVED
+                </div>
 
-        <h1>
-            You Remembered. 🥹
-        </h1>
+                <h1>
+                    You Remembered. 🥹
+                </h1>
 
-        <p class="description">
+                <p class="description">
 
-            It started with something as simple as
-            <strong>studies.</strong>
+                    It started with something as simple as
+                    <strong>studies.</strong>
 
-            <br><br>
+                    <br><br>
 
-            Nothing extraordinary...
-            <br>
-            nothing planned.
+                    Nothing extraordinary...
 
-            <br><br>
+                    <br>
+                    nothing planned.
 
-            Just a conversation between
-            <br>
-            two people who didn't know
-            <br>
-            how important they might become
-            <br>
-            to each other.
+                    <br><br>
 
-            <br><br>
+                    Just a conversation between
+                    <br>
+                    two people who didn't know
+                    <br>
+                    how important they might become
+                    <br>
+                    to each other.
 
-            Funny how life works, right? ❤️
+                    <br><br>
 
-        </p>
+                    Funny how life works, right? ❤️
 
-        <button onclick="openClue(3)">
-            FIND THE NEXT CLUE →
-        </button>
+                </p>
 
-        <p class="hint">
-            One more clue remains... 🔎
-        </p>
+                <button onclick="openClue(3)">
+                    ONE MORE CLUE → 🔎
+                </button>
 
-    `;
+                <p class="hint">
+                    One more clue remains... 🔎
+                </p>
 
-}
-    
-    else if (clueNumber === 3) {
+            `;
 
-    card.innerHTML = `
+        }
 
-        <div class="game-icon">
-            💞
-        </div>
 
-        <div class="clue-number">
-            CLUE 03
-        </div>
+        /* CLUE 03 SOLVED */
 
-        <h1>
-            The Little Things
-        </h1>
+        else if (clueNumber === 3) {
 
-        <p class="description">
+            card.innerHTML = `
 
-            Maybe it's not about one big moment.
+                <div class="game-icon">
+                    ❤️
+                </div>
 
-            <br><br>
+                <div class="clue-number">
+                    CLUE SOLVED
+                </div>
 
-            Maybe it's about the little things...
+                <h1>
+                    You Understand Me. ❤️
+                </h1>
 
-            <br><br>
+                <p class="description">
 
-            The random conversations.<br>
-            The stupid jokes.<br>
-            The moments when we actually listen to each other.
+                    Maybe that's what makes this story special.
 
-            <br><br>
+                    <br><br>
 
-            So here's the final question...
+                    It was never about one perfect moment...
 
-        </p>
+                    <br><br>
 
-        <div class="question-box">
+                    It was about all those little moments
+                    that slowly became something meaningful.
 
-            <h3>
-                If life gave us a second chance to write our own little love story, what would you choose?
-            </h3>
+                    <br><br>
 
-            <button onclick="checkAnswer(this, false, completeClue3)">
-                Let it remain a beautiful dream
-            </button>
+                    And maybe...
 
-            <button onclick="completeClue3()">
-                Start the story and see where it takes us
-            </button>
+                    <strong>
+                        this is where our little story really begins. ❤️
+                    </strong>
 
-            <button onclick="completeClue3()">
-                Forget everything & move on
-            </button>
+                </p>
 
-        </div>
+                <button onclick="startLevelThree()">
+                    CONTINUE TO LEVEL 03 ❤️ →
+                </button>
 
-    `;
+            `;
 
-}
+        }
 
         card.classList.remove("fade-out");
         card.classList.add("fade-in");
@@ -718,28 +791,39 @@ function solveClue(clueNumber) {
     }, 450);
 }
 
+
+/* =========================
+   OLD CHECK ANSWER FUNCTION
+========================= */
+
 function checkAnswer(button, isCorrect, nextFunction) {
 
     if (isCorrect) {
 
-        // Correct answer
         button.classList.add("correct");
 
         setTimeout(() => {
+
             nextFunction();
-        }, 700);
+
+        }, 1500);
 
     } else {
 
-        // Wrong answer
         button.classList.add("wrong");
 
         setTimeout(() => {
-            button.classList.remove("wrong");
-        }, 700);
 
+            button.classList.remove("wrong");
+
+        }, 700);
     }
 }
+
+
+/* =========================
+   LEVEL 03
+========================= */
 
 function startLevelThree() {
 
@@ -811,6 +895,11 @@ function startLevelThree() {
     }, 500);
 }
 
+
+/* =========================
+   FEELINGS
+========================= */
+
 function revealFeelings() {
 
     const card = document.querySelector(".mission-card");
@@ -865,7 +954,7 @@ function revealFeelings() {
                         I don't want to lose.
                     </strong>
 
-                </p>
+                    </p>
 
                 <button onclick="showProposal()">
                     ONE LAST THING... ❤️
@@ -880,6 +969,11 @@ function revealFeelings() {
 
     }, 500);
 }
+
+
+/* =========================
+   COMPLETE CLUE 03
+========================= */
 
 function completeClue3() {
 
@@ -920,7 +1014,9 @@ function completeClue3() {
 
                 And maybe...
 
-                <strong>this is where our little story really begins. ❤️</strong>
+                <strong>
+                    this is where our little story really begins. ❤️
+                </strong>
 
             </p>
 
@@ -936,26 +1032,42 @@ function completeClue3() {
     }, 450);
 }
 
+
+/* =========================
+   PROPOSAL
+========================= */
+
 function showProposal() {
+
     const card = document.querySelector(".mission-card");
 
     card.classList.add("fade-out");
 
     setTimeout(() => {
-        card.innerHTML = `
-            <div class="heart-reveal">
-                <div class="game-icon">❤️</div>
 
-                <h1>One Last Thing...</h1>
+        card.innerHTML = `
+
+            <div class="heart-reveal">
+
+                <div class="game-icon">
+                    ❤️
+                </div>
+
+                <h1>
+                    One Last Thing...
+                </h1>
 
                 <div class="case-line"></div>
 
                 <p class="description">
-                    I've been trying to find the right words...
+
+                    I've been trying to find
+                    the right words...
 
                     <br><br>
 
-                    But maybe the simplest thing to say is...
+                    But maybe the simplest thing
+                    to say is...
 
                     <br><br>
 
@@ -965,114 +1077,190 @@ function showProposal() {
 
                     <br><br>
 
-                    And I don't want this to remain unsaid anymore.
+                    And I don't want this to remain
+                    unsaid anymore.
+
+                    <br><br>
+
+                    <strong>
+                        Will you be mine?
+                    </strong>
+
                 </p>
 
                 <button onclick="finalMessage()">
-                    ❤️ YES, I WANT TO KNOW
+                    YES ❤️
                 </button>
+
             </div>
+
         `;
 
         card.classList.remove("fade-out");
         card.classList.add("fade-in");
+
     }, 500);
 }
 
+
+/* =========================
+   FINAL MESSAGE
+========================= */
+
 function finalMessage() {
+
     const card = document.querySelector(".mission-card");
 
     card.classList.add("fade-out");
 
     setTimeout(() => {
+
         card.innerHTML = `
+
             <div class="heart-reveal">
-                <div class="game-icon">❤️</div>
 
-                <div class="clue-number">MY ANSWER</div>
+                <div class="game-icon">
+                    ❤️
+                </div>
 
-                <h1>Will You Be Mine? ❤️</h1>
+                <div class="clue-number">
+                    MY ANSWER
+                </div>
+
+                <h1>
+                    Will You Be Mine? ❤️
+                </h1>
 
                 <div class="case-line"></div>
 
-                <p class="description">
+                <p class="description" id="finalMessage">
+
                     I don't know where this story will go...
+
                     <br><br>
 
-                    But I know that I want to find out
-                    with you. ❤️
+                    But I know I want to discover it with you.
+
                     <br><br>
 
-                    So there's just one thing
-                    left to ask...
-                    <br><br>
+                    <strong>
+                        Will you be mine?
+                    </strong>
 
-                    <strong>Will you be mine?</strong> ❤️
                 </p>
 
                 <button onclick="finalYes()">
                     YES ❤️
                 </button>
+
             </div>
+
         `;
 
         card.classList.remove("fade-out");
         card.classList.add("fade-in");
+
+        typeFinalMessage();
+
     }, 500);
 }
 
+
+/* =========================
+   FINAL YES
+========================= */
+
 function finalYes() {
+
     const card = document.querySelector(".mission-card");
 
     card.classList.add("fade-out");
 
     setTimeout(() => {
-        card.innerHTML = `
-            <div class="heart-reveal">
-                <div class="game-icon">❤️</div>
 
-                <h1>Thank You ❤️</h1>
+        card.innerHTML = `
+
+            <div class="final-slide">
+
+                <div class="game-icon">
+                    ❤️
+                </div>
+
+                <h1>
+                    And after everything...
+                </h1>
+
+                <h2>
+                    it's finally us. ❤️
+                </h2>
 
                 <div class="case-line"></div>
 
                 <p class="description">
+
                     You just made my heart very happy.
+
                     <br><br>
+
                     I don't know what the future holds,
                     but I know I want to discover it with you.
+
                     <br><br>
-                    <strong>Our little story starts here. ❤️</strong>
+
+                    <strong>
+                        Our little story starts here. ❤️
+                    </strong>
+
                 </p>
 
-                <div class="game-icon">💗</div>
+                <div class="game-icon">
+                    💖
+                </div>
+
             </div>
+
         `;
 
         card.classList.remove("fade-out");
         card.classList.add("fade-in");
+
+        createFloatingHeart();
+
     }, 500);
 }
 
-/* =================================
+
+/* =========================
    FLOATING HEARTS
-================================= */
+========================= */
 
 function createFloatingHeart() {
 
-    const container = document.querySelector(".floating-hearts");
+    const container =
+        document.querySelector(".floating-hearts");
 
     if (!container) return;
 
-    const heart = document.createElement("div");
+    const heart =
+        document.createElement("div");
 
-    heart.className = "floating-heart";
+    heart.className =
+        "floating-heart";
 
-    const hearts = ["❤️", "💗", "💕", "💖", "💓"];
+    const hearts = [
+        "❤️",
+        "💗",
+        "💖",
+        "💕",
+        "💓",
+        "💘"
+    ];
 
     heart.innerHTML =
         hearts[Math.floor(Math.random() * hearts.length)];
 
-    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.left =
+        Math.random() * 100 + "vw";
 
     heart.style.fontSize =
         (Math.random() * 18 + 12) + "px";
@@ -1086,7 +1274,9 @@ function createFloatingHeart() {
     container.appendChild(heart);
 
     setTimeout(() => {
+
         heart.remove();
+
     }, duration * 1000);
 }
 
@@ -1095,25 +1285,39 @@ function createFloatingHeart() {
 
 setInterval(createFloatingHeart, 700);
 
+
+/* =========================
+   TYPE FINAL MESSAGE
+========================= */
+
 function typeFinalMessage() {
+
+    const element =
+        document.getElementById("finalMessage");
+
+    if (!element) return;
 
     const message =
         "I don't know what the future holds... " +
-        "but I know I want to discover it with you. ❤️";
+        "but I know I want to discover it with you.";
 
-    const element = document.getElementById("finalMessage");
+    /*
+       Keep the HTML message visible.
+       This function is intentionally simple so
+       it does not destroy the <br> and <strong>
+       formatting inside the final slide.
+    */
 
-    let i = 0;
+    return message;
+}
 
-    function type() {
+function playLoveSong() {
+    const song = document.getElementById("loveSong");
 
-        if (i < message.length) {
-            element.textContent += message.charAt(i);
-            i++;
-
-            setTimeout(type, 45);
-        }
+    if (song) {
+        song.volume = 0.7;
+        song.play().catch(error => {
+            console.log("Music could not play:", error);
+        });
     }
-
-    type();
 }
