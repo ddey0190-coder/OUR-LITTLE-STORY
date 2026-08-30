@@ -1171,33 +1171,25 @@ function finalMessage() {
 ========================= */
 
 function finalYes() {
-
     const card = document.querySelector(".mission-card");
 
     card.classList.add("fade-out");
 
     setTimeout(() => {
 
+        // OLD FINAL SLIDE — এটা থাকবে
         card.innerHTML = `
-
             <div class="final-slide">
 
-                <div class="game-icon">
-                    ❤️
-                </div>
+                <div class="game-icon">❤️</div>
 
-                <h1>
-                    And after everything...
-                </h1>
+                <h1>And after everything...</h1>
 
-                <h2>
-                    it's finally us. ❤️
-                </h2>
+                <h2>it's finally us. ❤️</h2>
 
                 <div class="case-line"></div>
 
                 <p class="description">
-
                     You just made my heart very happy.
 
                     <br><br>
@@ -1207,24 +1199,117 @@ function finalYes() {
 
                     <br><br>
 
-                    <strong>
-                        Our little story starts here. ❤️
-                    </strong>
-
+                    <strong>Our little story starts here. ❤️</strong>
                 </p>
 
-                <div class="game-icon">
-                    💖
-                </div>
+                <button onclick="showThankYou()">
+                    ONE LAST THING ❤️
+                </button>
 
             </div>
-
         `;
 
         card.classList.remove("fade-out");
         card.classList.add("fade-in");
 
-        createFloatingHeart();
+    }, 500);
+}
+
+
+// ======================================
+// FINAL THANK YOU SLIDE
+// ======================================
+
+function showThankYou() {
+
+    const card = document.querySelector(".mission-card");
+
+    card.classList.add("fade-out");
+
+    setTimeout(() => {
+
+        card.innerHTML = `
+            <div class="thank-you-slide">
+
+                <div class="thank-heart">♥️</div>
+
+                <h1>Thank You ❤️</h1>
+
+                <h2>My Would-Be Girlfriend</h2>
+
+                <div class="thank-line"></div>
+
+                <p>
+                    Thank you for coming into my life. ❤️
+                </p>
+
+                <p>
+                    Thank you for turning my
+                    <strong>black & white life</strong>
+                    into something so beautiful and colourful.
+                </p>
+
+                <p>
+                    You brought colours into places
+                    I didn't even know were grey.
+                </p>
+
+                <p>
+                    You brought happiness, warmth,
+                    smiles and a beautiful reason
+                    to look forward to tomorrow.
+                </p>
+
+                <p>
+                    I promise you...
+                </p>
+
+                <p>
+                    I will always stand beside you.<br>
+                    I will listen to you.<br>
+                    I will understand you.<br>
+                    I will respect you.<br>
+                    And I will love you with all my heart. ❤️
+                </p>
+
+                <p>
+                    I promise to give you my very best,
+                    to protect our bond,
+                    to support your dreams,
+                    and to hold your hand through
+                    every up and down.
+                </p>
+
+                <p class="promise">
+                    I may not be perfect,
+                    but I promise I will always try
+                    to be the best version of myself for you.
+                </p>
+
+                <p class="promise">
+                    I promise to give my everything
+                    to keep this beautiful bond safe. ❤️
+                </p>
+
+                <p class="forever">
+                    I promise to be yours,<br>
+                    to stay yours,<br>
+                    and to choose you<br>
+                    again and again.
+                </p>
+
+                <div class="final-heart">♥️</div>
+
+                <p class="signature">
+                    With all my heart,<br><br>
+                    <strong>Debargaha Dey ❤️</strong>
+                </p>
+
+            </div>
+        `;
+
+        card.classList.remove("fade-out");
+        card.classList.add("fade-in");
 
     }, 500);
 }

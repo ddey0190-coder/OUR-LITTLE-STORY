@@ -531,3 +531,133 @@ button{
 .final-slide h2 {
     font-size: 36px;
 }
+
+/* =================================
+   THANK YOU FINAL SLIDE
+================================= */
+
+.thank-you-slide {
+    text-align: center;
+    padding: 35px 25px;
+    animation: thankYouAppear 1.2s ease forwards;
+}
+
+.thank-heart {
+    font-size: 55px;
+    animation: heartBeat 1.5s infinite;
+    margin-bottom: 10px;
+}
+
+.thank-you-slide h1 {
+    font-size: 42px;
+    margin: 5px 0;
+    color: #ff6b9d;
+}
+
+.thank-you-slide h2 {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: #ffd1df;
+}
+
+.thank-line {
+    width: 100px;
+    height: 2px;
+    margin: 15px auto 25px;
+    background: #ff6b9d;
+    box-shadow: 0 0 10px #ff6b9d;
+}
+
+.thank-you-slide p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 18px auto;
+    max-width: 650px;
+    color: #f5e9ee;
+}
+
+.thank-you-slide strong {
+    color: #ff7fa8;
+}
+
+.promise {
+    font-size: 18px !important;
+    font-weight: 500;
+}
+
+.forever {
+    font-size: 21px !important;
+    line-height: 2 !important;
+    color: #ffd5e2 !important;
+    margin-top: 25px !important;
+}
+
+.final-heart {
+    font-size: 45px;
+    color: #ff5f8f;
+    margin: 20px 0;
+    animation: heartBeat 1.5s infinite;
+}
+
+.signature {
+    font-size: 17px !important;
+    margin-top: 25px !important;
+    color: #ffc3d5 !important;
+}
+
+
+/* Animations */
+
+@keyframes thankYouAppear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heartBeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .thank-you-slide {
+        padding: 25px 15px;
+    }
+
+    .thank-you-slide h1 {
+        font-size: 32px;
+    }
+
+    .thank-you-slide h2 {
+        font-size: 17px;
+    }
+
+    .thank-you-slide p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .forever {
+        font-size: 18px !important;
+    }
+
+    .thank-heart {
+        font-size: 45px;
+    }
+}
