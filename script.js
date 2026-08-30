@@ -359,21 +359,21 @@ function openClue(clueNumber) {
                     <div class="question-box">
 
                         <h2>
-                            Who sent the first message?
+                            If you could keep just one memory of us forever, which would you choose?
                         </h2>
 
                         <div class="options">
 
                             <button onclick="solveClue(1)">
-                                Me 😌
+                                Our first conversation  
                             </button>
 
                             <button onclick="solveClue(1)">
-                                You ❤️
+                                The moment you first smiled at me
                             </button>
 
                             <button onclick="solveClue(1)">
-                                The universe 😂
+                                A random day we spent together
                             </button>
 
                         </div>
@@ -432,21 +432,21 @@ function openClue(clueNumber) {
                     <div class="question-box">
 
                         <h2>
-                            What was our first proper conversation about?
+                            What would you choose if you had to describe what i mean to you ?
                         </h2>
 
                         <div class="options">
 
                             <button onclick="solveClue(2)">
-                                Movies 🎬
+                                A beautiful coincidence
                             </button>
 
                             <button onclick="solveClue(2)">
-                                Studies 📚
+                                I never want to lose you
                             </button>
 
                             <button onclick="solveClue(2)">
-                                Random nonsense 😂
+                                Just a sweet memory
                             </button>
 
                         </div>
@@ -506,21 +506,21 @@ function openClue(clueNumber) {
             <div class="question-box">
 
                 <h2>
-                    What makes our conversations feel so easy?
+                    If life gave us a second chance to write our own little love story, what would you choose?
                 </h2>
 
                 <div class="options">
 
                     <button onclick="solveClue(3)">
-                        We both listen 👂❤️
+                        Let it remain a beautiful dream
                     </button>
 
                     <button onclick="solveClue(3)">
-                        We both are funny 😂
+                        Start the story and see where it takes us
                     </button>
 
                     <button onclick="solveClue(3)">
-                        Honestly... both 😌
+                        Forget everything & move on
                     </button>
 
                 </div>
@@ -691,19 +691,19 @@ function solveClue(clueNumber) {
         <div class="question-box">
 
             <h3>
-                What makes our conversations feel so easy?
+                If life gave us a second chance to write our own little love story, what would you choose?
             </h3>
 
-            <button onclick="completeClue3()">
-                We both listen 💛❤️
+            <button onclick="checkAnswer(this, false, completeClue3)">
+                Let it remain a beautiful dream
             </button>
 
             <button onclick="completeClue3()">
-                We both are funny 😌
+                Start the story and see where it takes us
             </button>
 
             <button onclick="completeClue3()">
-                Maybe... we just understand each other ❤️
+                Forget everything & move on
             </button>
 
         </div>
@@ -716,6 +716,29 @@ function solveClue(clueNumber) {
         card.classList.add("fade-in");
 
     }, 450);
+}
+
+function checkAnswer(button, isCorrect, nextFunction) {
+
+    if (isCorrect) {
+
+        // Correct answer
+        button.classList.add("correct");
+
+        setTimeout(() => {
+            nextFunction();
+        }, 700);
+
+    } else {
+
+        // Wrong answer
+        button.classList.add("wrong");
+
+        setTimeout(() => {
+            button.classList.remove("wrong");
+        }, 700);
+
+    }
 }
 
 function startLevelThree() {

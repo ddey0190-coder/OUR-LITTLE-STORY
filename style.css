@@ -455,3 +455,65 @@ button{
         transform: scale(1.25);
     }
 }
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.options button {
+    width: 100%;
+    padding: 14px 20px;
+    border: 1px solid rgba(255, 120, 180, 0.4);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.options button:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 105, 170, 0.2);
+    border-color: rgba(255, 130, 190, 0.8);
+}
+
+.options button.correct {
+    background: rgba(70, 200, 120, 0.25);
+    border-color: #6cff9a;
+    transform: scale(1.03);
+}
+
+.options button.wrong {
+    background: rgba(255, 60, 90, 0.25);
+    border-color: #ff5c7a;
+    animation: shake 0.35s ease;
+}
+
+@keyframes shake {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-7px);
+    }
+
+    50% {
+        transform: translateX(7px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+
+}
