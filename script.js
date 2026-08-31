@@ -1302,7 +1302,7 @@ function showThankYou() {
 
                 <p class="signature">
                     With all my heart,<br><br>
-                    <strong>Debargaha Dey ❤️</strong>
+                    <strong>Debargha Dey ❤️</strong>
                 </p>
 
             </div>
