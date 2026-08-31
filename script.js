@@ -1033,11 +1033,8 @@ function completeClue3() {
 }
 
 
-/* =========================
-   PROPOSAL
-========================= */
 
-function showProposal() {
+function showReasons() {
 
     const card = document.querySelector(".mission-card");
 
@@ -1053,46 +1050,129 @@ function showProposal() {
                     ❤️
                 </div>
 
+                <div class="level-badge">
+                    JUST A FEW REASONS...
+                </div>
+
                 <h1>
-                    One Last Thing...
+                    Why I Like You ❤️
                 </h1>
 
                 <div class="case-line"></div>
 
                 <p class="description">
 
-                    I've been trying to find
-                    the right words...
+                    It's not just one thing...
 
                     <br><br>
 
-                    But maybe the simplest thing
-                    to say is...
+                    ❤️ The way you listen to me.
+
+                    <br><br>
+
+                    😂 The way you make even
+                    ordinary conversations fun.
+
+                    <br><br>
+
+                    🫶 The comfort I feel
+                    whenever I talk to you.
+
+                    <br><br>
+
+                    ✨ The little things you do
+                    that you probably don't even notice.
+
+                    <br><br>
+
+                    And most importantly...
 
                     <br><br>
 
                     <strong>
-                        I really, really like you. ❤️
-                    </strong>
-
-                    <br><br>
-
-                    And I don't want this to remain
-                    unsaid anymore.
-
-                    <br><br>
-
-                    <strong>
-                        Will you be mine?
+                        You make my ordinary days
+                        feel a little more special. ❤️
                     </strong>
 
                 </p>
 
-                <button onclick="finalMessage()">
-                    YES ❤️
+                <button onclick="showProposal()">
+                    NOW ONE LAST THING... ❤️
                 </button>
 
             </div>
+
+        `;
+
+        card.classList.remove("fade-out");
+        card.classList.add("fade-in");
+
+    }, 500);
+}
+
+/* =====================
+   SHOW PROPOSAL
+===================== */
+
+function showProposal() {
+
+    const card = document.querySelector(".mission-card");
+
+    card.classList.add("fade-out");
+
+    setTimeout(() => {
+
+        card.innerHTML = `
+        
+        <div class="heart-reveal">
+
+            <div class="game-icon">
+                ❤️
+            </div>
+
+            <h1>
+                One Last Thing...
+            </h1>
+
+            <div class="case-line"></div>
+
+            <p class="description">
+
+                I've been trying to find
+                <br>
+                the right words...
+
+                <br><br>
+
+                But maybe the simplest thing
+                <br>
+                to say is...
+
+                <br><br>
+
+                <strong>
+                    I really, really like you. ❤️
+                </strong>
+
+                <br><br>
+
+                And I don't want this to remain
+                <br>
+                unsaid anymore.
+
+                <br><br>
+
+                <strong>
+                    Will you be mine?
+                </strong>
+
+            </p>
+
+            <button onclick="showFinalMessage()">
+                YES ❤️
+            </button>
+
+        </div>
 
         `;
 
@@ -1107,7 +1187,7 @@ function showProposal() {
    FINAL MESSAGE
 ========================= */
 
-function finalMessage() {
+function showFinalMessage() {
 
     const card = document.querySelector(".mission-card");
 
@@ -1211,8 +1291,40 @@ function finalYes() {
 
         card.classList.remove("fade-out");
         card.classList.add("fade-in");
+        createHeartExplosion();
 
     }, 500);
+}
+
+function createHeartExplosion() {
+    const hearts = ["❤️", "💕", "💗", "💖", "💘"];
+
+    for (let i = 0; i < 30; i++) {
+        const heart = document.createElement("div");
+
+        heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+
+        heart.style.position = "fixed";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.top = "100vh";
+        heart.style.fontSize = (15 + Math.random() * 25) + "px";
+        heart.style.zIndex = "9999";
+        heart.style.pointerEvents = "none";
+        heart.style.transition = "all 3s ease-out";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.style.top = (-10 + Math.random() * 80) + "vh";
+            heart.style.transform =
+                "translateX(" + (-100 + Math.random() * 200) + "px) rotate(360deg)";
+            heart.style.opacity = "0";
+        }, 50);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 3200);
+    }
 }
 
 
@@ -1302,8 +1414,152 @@ function showThankYou() {
 
                 <p class="signature">
                     With all my heart,<br><br>
+                    <strong> Debargha Dey ❤️</strong>
+                </p>
+
+                <button onclick="document.getElementById('secret-message').style.display='block'; this.style.display='none';">
+                   P.S. One Little Secret 🤫
+                </button>
+
+                <br><br>
+
+                <button onclick="showNewFinalSlide()">
+                    ONE MORE THING...  
+                </button>
+
+                <div id="secret-message" style="display:none;">
+                  <br>
+                <p>
+                Maybe I don't know where our story will take us...
+                  <br><br>
+                But I know one thing —
+                  <br><br>
+                  <strong>
+                I'm really happy that I met you. ❤️
+            </strong>
+        </p>
+    </div>
+
+            </div>
+        `;
+
+        card.classList.remove("fade-out");
+        card.classList.add("fade-in");
+
+    }, 500);
+}
+
+// ==============================
+// NEW FINAL SLIDE
+// ==============================
+
+function showNewFinalSlide() {
+
+    const card = document.querySelector(".mission-card");
+
+    card.classList.add("fade-out");
+
+    setTimeout(() => {
+
+        card.innerHTML = `
+            <div class="final-slide">
+
+                <div class="game-icon">💖</div>
+
+                <h1>And this is just the beginning...</h1>
+
+                <h2>Our little story starts here. ❤️</h2>
+
+                <div class="case-line"></div>
+
+                <p class="description">
+
+                    I don't know what tomorrow will bring...
+
+                    <br><br>
+
+                    But whatever comes next,
+                    I want to experience it with you.
+
+                    <br><br>
+
+                    More smiles. 😊<br>
+                    More memories. ✨<br>
+                    More moments together. ❤️
+
+                    <br><br>
+
+                    <strong>
+                        This is not the end...
+                        <br>
+                        This is where our story begins. ❤️
+                    </strong>
+
+                </p>
+
+                <div class="final-heart">❤️</div>
+
+                <p class="signature">
+                    With all my heart,<br><br>
                     <strong>Debargha Dey ❤️</strong>
                 </p>
+
+            </div>
+        `;
+
+        card.classList.remove("fade-out");
+        card.classList.add("fade-in");
+
+    }, 500);
+}
+
+function showSecret() {
+    const card = document.querySelector(".mission-card");
+
+    card.classList.add("fade-out");
+
+    setTimeout(() => {
+        card.innerHTML = `
+            <div class="secret-slide">
+
+                <div class="game-icon">🤫</div>
+
+                <div class="level-badge">
+                    JUST BETWEEN US...
+                </div>
+
+                <h1>A Little Secret ❤️</h1>
+
+                <div class="case-line"></div>
+
+                <p class="description">
+                    Maybe I don't know where our story will take us...
+
+                    <br><br>
+
+                    But I know one thing —
+
+                    <br><br>
+
+                    <strong>
+                        I'm really happy that I met you. ❤️
+                    </strong>
+
+                    <br><br>
+
+                    And honestly...
+
+                    <br><br>
+
+                    <strong>
+                        I hope this little story becomes<br>
+                        something beautiful. ❤️
+                    </strong>
+                </p>
+
+                <button onclick="showFinalMessage()">
+                    ONE LAST SECRET... ❤️
+                </button>
 
             </div>
         `;
@@ -1404,5 +1660,20 @@ function playLoveSong() {
         song.play().catch(error => {
             console.log("Music could not play:", error);
         });
+    }
+}
+
+function toggleMusic() {
+    const song = document.getElementById("loveSong");
+    const button = document.getElementById("musicToggle");
+
+    if (!song) return;
+
+    if (song.muted) {
+        song.muted = false;
+        button.innerHTML = "🎵 ON";
+    } else {
+        song.muted = true;
+        button.innerHTML = "🔇 OFF";
     }
 }

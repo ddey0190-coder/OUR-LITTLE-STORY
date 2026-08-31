@@ -661,3 +661,77 @@ button{
         font-size: 45px;
     }
 }
+
+/* FOREVER GLOW EFFECT */
+.forever {
+    animation: foreverGlow 2s ease-in-out infinite;
+}
+
+@keyframes foreverGlow {
+    0%, 100% {
+        transform: scale(1);
+        text-shadow: 0 0 5px rgba(255, 105, 180, 0.4);
+    }
+
+    50% {
+        transform: scale(1.05);
+        text-shadow:
+            0 0 10px rgba(255, 105, 180, 0.7),
+            0 0 20px rgba(255, 105, 180, 0.5);
+    }
+}
+
+/* ===== FINAL SLIDE POLISH ===== */
+
+.final-slide,
+.thank-you-slide {
+    animation: finalAppear 1.2s ease forwards;
+}
+
+@keyframes finalAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(25px) scale(0.97);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Heart animation */
+.final-heart,
+.thank-heart {
+    animation: heartBeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartBeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+}
+
+/* Final text appearance */
+.final-slide h1,
+.final-slide h2,
+.thank-you-slide h1,
+.thank-you-slide h2 {
+    animation: textReveal 1s ease forwards;
+}
+
+@keyframes textReveal {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
