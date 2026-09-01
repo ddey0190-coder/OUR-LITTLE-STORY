@@ -735,3 +735,31 @@ button{
         transform: translateY(0);
     }
 }
+
+.answer-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    min-height: 100px;
+}
+
+.answer-buttons button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.yes-btn {
+    background: #ff4f81;
+    color: white;
+}
+
+.no-btn {
+    background: #777;
+    color: white;
+}

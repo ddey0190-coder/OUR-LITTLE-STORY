@@ -1229,9 +1229,17 @@ function showFinalMessage() {
 
                 </p>
 
-                <button onclick="finalYes()">
-                    YES ❤️
-                </button>
+                <div class="answer-buttons">
+    <button class="yes-btn" onclick="finalYes()">
+        YES ❤️
+    </button>
+
+    <button class="no-btn"
+        onmouseenter="moveNoButton(this)"
+        ontouchstart="moveNoButton(this)">
+        NO 😏
+    </button>
+</div>
 
             </div>
 
@@ -1294,6 +1302,20 @@ function finalYes() {
         createHeartExplosion();
 
     }, 500);
+}
+
+function moveNoButton(button) {
+    const container = button.parentElement;
+
+    const maxX = container.clientWidth - button.offsetWidth;
+    const maxY = 100;
+
+    const randomX = Math.max(0, Math.random() * maxX);
+    const randomY = Math.random() * maxY;
+
+    button.style.position = "relative";
+    button.style.left = randomX + "px";
+    button.style.top = randomY + "px";
 }
 
 function createHeartExplosion() {
