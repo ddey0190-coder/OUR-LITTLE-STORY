@@ -923,11 +923,11 @@ function revealFeelings() {
 
                 <p class="description">
 
-                    তুমি সত্যিই খুব সুন্দর দেখতে...
+                    You are trully very beautiful...
 
                     <br><br>
 
-                    ঠিক আমার মনের পছন্দের মতো।
+                    Exactly the way my heart desirrs you to be...
 
                     <br><br>
 
@@ -1265,7 +1265,7 @@ function finalYes() {
 
     setTimeout(() => {
 
-        // OLD FINAL SLIDE — এটা থাকবে
+        
         card.innerHTML = `
             <div class="final-slide">
 
@@ -1305,13 +1305,28 @@ function finalYes() {
 }
 
 function moveNoButton(button) {
+    const messages = [
+        "Nice try 😂",
+        "Nope! 😏",
+        "Catch me if you can! 🏃‍♀️",
+        "Are you sure? 👀",
+        "Think again! ❤️",
+        "You can't say NO 😌",
+        "Oops... too slow 😂"
+    ];
+
+    button.innerText =
+        messages[Math.floor(Math.random() * messages.length)];
+
     const container = button.parentElement;
 
-    const maxX = container.clientWidth - button.offsetWidth;
-    const maxY = 100;
+    const maxX = Math.max(
+        0,
+        container.clientWidth - button.offsetWidth
+    );
 
-    const randomX = Math.max(0, Math.random() * maxX);
-    const randomY = Math.random() * maxY;
+    const randomX = Math.random() * maxX;
+    const randomY = (Math.random() * 80) - 40;
 
     button.style.position = "relative";
     button.style.left = randomX + "px";
@@ -1439,9 +1454,9 @@ function showThankYou() {
                     <strong> Debargha Dey ❤️</strong>
                 </p>
 
-                <button onclick="document.getElementById('secret-message').style.display='block'; this.style.display='none';">
-                   P.S. One Little Secret 🤫
-                </button>
+                <button onclick="showSecret()" class="secret-btn">
+                  🔐 P.S. One Little Secret...
+                 </button>
 
                 <br><br>
 
@@ -1536,60 +1551,30 @@ function showNewFinalSlide() {
 }
 
 function showSecret() {
-    const card = document.querySelector(".mission-card");
+    const secret = document.getElementById("secret-message");
 
-    card.classList.add("fade-out");
+    secret.style.display = "block";
 
-    setTimeout(() => {
-        card.innerHTML = `
-            <div class="secret-slide">
+    secret.innerHTML = `
+        <div class="secret-reveal">
+            <div style="font-size:32px;">🔓 ❤️</div>
 
-                <div class="game-icon">🤫</div>
-
-                <div class="level-badge">
-                    JUST BETWEEN US...
-                </div>
-
-                <h1>A Little Secret ❤️</h1>
-
-                <div class="case-line"></div>
-
-                <p class="description">
-                    Maybe I don't know where our story will take us...
-
-                    <br><br>
-
-                    But I know one thing —
-
-                    <br><br>
-
-                    <strong>
-                        I'm really happy that I met you. ❤️
-                    </strong>
-
-                    <br><br>
-
-                    And honestly...
-
-                    <br><br>
-
-                    <strong>
-                        I hope this little story becomes<br>
-                        something beautiful. ❤️
-                    </strong>
-                </p>
-
-                <button onclick="showFinalMessage()">
-                    ONE LAST SECRET... ❤️
-                </button>
-
-            </div>
-        `;
-
-        card.classList.remove("fade-out");
-        card.classList.add("fade-in");
-
-    }, 500);
+            <p>
+                Maybe I don't know where our story will take us...
+                <br><br>
+                But I know one thing —
+                <br><br>
+                <strong>
+                    I'm really, really happy that I met you. ❤️
+                </strong>
+                <br><br>
+                <em>
+                    And maybe... this little secret
+                    was meant only for you. ✨
+                </em>
+            </p>
+        </div>
+    `;
 }
 
 
