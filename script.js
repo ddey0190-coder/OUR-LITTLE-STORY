@@ -1208,7 +1208,7 @@ function showFinalMessage() {
                 </div>
 
                 <h1>
-                    Will You Be Mine? ❤️
+                    Will You Be Mine, Mehuli? ❤️
                 </h1>
 
                 <div class="case-line"></div>
@@ -1224,7 +1224,7 @@ function showFinalMessage() {
                     <br><br>
 
                     <strong>
-                        Will you be mine?
+                        Will you be mine, Mehuli?
                     </strong>
 
                 </p>
@@ -1450,7 +1450,8 @@ function showThankYou() {
                 <div class="final-heart">♥️</div>
 
                 <p class="signature">
-                    With all my heart,<br><br>
+                   For Mehuli, With all my heart.
+                   <br><br>
                     <strong> Debargha Dey ❤️</strong>
                 </p>
 
@@ -1467,6 +1468,8 @@ function showThankYou() {
                 <div id="secret-message" style="display:none;">
                   <br>
                 <p>
+                <strong>Mehuli ❤️</strong>
+                <br><br>
                 Maybe I don't know where our story will take us...
                   <br><br>
                 But I know one thing —
@@ -1560,12 +1563,19 @@ function showSecret() {
             <div style="font-size:32px;">🔓 ❤️</div>
 
             <p>
+    <strong>Mehuli ❤️</strong>
+    <br><br>
                 Maybe I don't know where our story will take us...
                 <br><br>
                 But I know one thing —
                 <br><br>
                 <strong>
                     I'm really, really happy that I met you. ❤️
+                    <br><br>
+<em>
+    Some people become a beautiful part of your story
+    without you even realizing when it happened. ✨
+</em
                 </strong>
                 <br><br>
                 <em>
